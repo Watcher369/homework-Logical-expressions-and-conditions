@@ -1,7 +1,16 @@
 
 
+def get_age():
+    while True:
+        try:
+            age = int(input("Введите ваш возраст: "))
+            return age
+        except ValueError:
+            print("Ошибка: введите возраст числом.")
+
+
 def get_user_data():
-    age = int(input("Введите ваш возраст: "))
+    age = get_age()
     citizen = input("Вы гражданин страны? (да/нет): ").lower()
     restriction = input("Есть ли у вас запрет на голосование? (да/нет): ").lower()
     return age, citizen, restriction
